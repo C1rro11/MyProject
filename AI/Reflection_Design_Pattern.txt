@@ -1,0 +1,24 @@
+gives code X to LLM --> LLM write first draft --> output: v1 code --> execute
+--> feedback (error) --> input: output code, feedback msg/error (give LLM again) -->
+LLM write draft again --> ... -> version x code.
+
+Understand what is Zero, one, and few-prompting.
+1: Zero prompting: no example feed to LLMs.
+2: one prompting : 1 example feed to LLMs.
+3: few prompting : few example feed to LLMs.
+
+direct generation also called zero prompting.
+eg: writing an eassy, tell LLMs to create a calculation formula without giving example.
+
+Why not just direct generation?
+interation reflection can make performance better than zero prompting.
+
+can you rewarding reflection to make AI being the judge to adjust the performance.
+
+performance comparison
+agentic AI with external feedback > Agentic AI with reflection > zero prompting Agentic AI.
+
+
+agentic AI with external feedback:
+eg: Challenge: LLM won't follow output length guideline example: essay over the word limit
+    source feedback: using word count tools to give fact to improve the LLM output.

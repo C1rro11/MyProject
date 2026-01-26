@@ -1,0 +1,23 @@
+4 Patterns:
+1:Reflection --> feed LLM a version 1 code, and take the feedback, make it better and better, eg: version-x code.
+2:Tools use  
+3:Planning -->  
+    eg: Request: Please generate an image where a girl is reading a book, 
+    and her pose is the same as the boy in the image example.jpg, 
+    then please describe the new image with your voice.
+
+    input: a boy.jpg file.
+
+    process:
+    1: Pose determination (openpose model)
+    2: Pose to Img (goole/vit model)
+    3: img to txt (bit-gpt2 model)
+    4: text to speech (fast speech model)
+
+
+4:Multi- Agent collaboration
+    just like different model have its own specific best skill
+    for example, 'A' model is good at writing, 'B' model is good at planning, 'C' model is good at img analysis.
+    then, the whole task will be completed by this 3 models.
+
+

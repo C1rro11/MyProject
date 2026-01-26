@@ -1,0 +1,102 @@
+re :  全名 regex / regular expression
+    usage: 主要用於對字串進行複雜的搜尋、匹配、擷取與替換
+    eg : 1: 驗證格式 2: 擷取資訊 3:字串替換 4:分詞與分割
+
+    語法: r"pattern"
+
+    include:  
+    1: re.search(pattern, string)
+    2: re.findall(pattern, string)
+    3: re.match(pattern, string)
+    4: re.sub(pattern, repl, string)
+    5: re.split(pattern, string)
+    6: re.compile(pattern)
+
+
+    example: 
+    import re
+    text = "聯絡電話：0912-345-678，或是 0988-111-222"
+
+    # 1. 搜尋第一個電話 (re.search)
+    match = re.search(r"\d{4}-\d{3}-\d{3}", text)   #d--> digital
+    if match:
+        print(f"找到第一個電話: {match.group()}")
+
+    # 2. 擷取所有電話 (re.findall)
+    phones = re.findall(r"\d{4}-\d{3}-\d{3}", text)
+    print(f"所有電話列表: {phones}")
+
+    # 3. 隱藏電話中間資訊 (re.sub)
+    hidden_text = re.sub(r"(\d{4})-\d{3}-(\d{3})", r"\1-***-\2", text)
+    print(f"隱藏後的文字: {hidden_text}")
+
+    4. Metacharacters
+    \d：匹配任何數字。
+    \w：匹配任何英文字母、數字或下底線。
+    . ：匹配除換行符號外的任何單一字元。
+    + ：匹配前面的模式 1 次或多次。
+    * ：匹配前面的模式 0 次或多次。
+    ^ 與 $：分別代表字串的開頭與結尾。
+
+
+base64: 主要用於將二進位數據（Binary Data）轉換為由 64 個可列印 ASCII 字元組成的文字字串
+
+usage:  數據傳輸: 在只支援純文字的環境（如 Email 協定 SMTP、JSON、XML）中傳輸圖片或音檔等二進位檔案。
+        內嵌資源：將小型圖片直接轉換為 Base64 字串並嵌入 HTML 或 CSS 中，減少 HTTP 請求次數。
+        URL 安全傳輸：提供 urlsafe 版本，將傳統 Base64 中的 + 和 / 替換為 - 和 _，使其能安全地放在網址中。
+
+ 語法： Base64 處理的是「位元組（bytes）」，因此字串必須先進行編碼（如 utf-8）。
+
+ exmaple:
+    Encode：
+    
+    import base64
+    # 原始字串轉換為 bytes
+    data = "Hello World".encode("utf-8")
+
+    # 進行 Base64 編碼
+    encoded = base64.b64encode(data)    b64encode() #領黎encode data stream
+    print(encoded)  # 輸出: b'SGVsbG8gV29ybGQ='
+
+    # 轉換回可讀字串 (選用)
+    encoded_str = encoded.decode("utf-8")
+    print(encoded_str) # 輸出: SGVsbG8gV29ybGQ=
+
+
+    Decode：
+    import base64
+    encoded_data = "SGVsbG8gV29ybGQ="
+
+    # 進行 Base64 解碼得到 bytes
+    decoded_bytes = base64.b64decode(encoded_data) 
+
+    # 轉換回原始字串
+    original_text = decoded_bytes.decode("utf-8")
+    print(original_text) # 輸出: Hello World
+
+mimetypes： 主要用於在**檔案名稱（或 URL）**與 **MIME 類型（Media Type）**之間進行轉換。
+
+usage: 1:推測檔案類型：根據副檔名判斷檔案是 image/png、application/pdf 或 text/html 等。
+       2:推測副檔名：反向操作，根據 MIME 類型找出對應的副檔名（例如從 audio/mpeg 找出 .mp3）。
+       3:設定 HTTP 標頭：在開發 Web 伺服器時，用來自動填寫 Content-Type 響應頭，確保瀏覽器能正確解析檔案。
+
+include: 1: guess_type(url)  --> 根據檔名或 URL 推測 MIME 類型與編碼。
+         2: guess_extension(type) -->  根據 MIME 類型推測最可能的副檔名。
+         3: add_type(type, ext) --> 手動註冊新的副檔名對應關係。
+
+
+example:
+
+import mimetypes
+# 1. 根據檔名猜測類型
+mime_type, encoding = mimetypes.guess_type("image.jpg")
+print(f"MIME 類型: {mime_type}") # 輸出: image/jpeg
+
+# 2. 根據類型猜測副檔名
+extension = mimetypes.guess_extension("application/pdf")
+print(f"副檔名: {extension}") # 輸出: .pdf
+
+# 3. 處理未知類型 (自定義)
+mimetypes.add_type("application/x-my-app", ".myapp")
+print(mimetypes.guess_type("test.myapp")[0]) # 輸出: application/x-my-app
+        

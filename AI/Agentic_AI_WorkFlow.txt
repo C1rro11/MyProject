@@ -1,0 +1,56 @@
+Agentic Ai Work flow: 
+a process where a LLM based app works through mutiples steps to complete a task
+
+Degree of Autonomous
+less autonomous: all steps predetermined, all tools are hardcoded
+high autonomous: AI agent makes a lots of decisions, create new functions.
+
+Benefit of using Agentic work flow
+1: Faster than human, because it can parallelization.
+2: Much better performance
+3: can add or update tools, and swap models
+
+Agentic AI application senario:
+1: Invoice processing workflow
+requirement: need LLM to help us to look at the pdf and update the database.
+process
+1.1: input : the invoice bill, call PDF to text converter API
+1.2: then LLM will use another tools to update the database.
+
+2:Responding customer emails and update database
+requirement: need LLM to through emails to update customer data.
+2.1: input: email, LLM verify and extract key infomation.
+2.2: LLM use tools to order database query.
+2.3: LLM then try to draft the response and request review the database by using request and review tools.
+2.4: send to customer after approved.
+
+Decomposite AI work flow:
+eg: writing an eassy
+in human perspective
+step 1: write an essay outline on topic X (LLM)
+step 2: search Web (LLM + search engine)
+step 3: write the essay(LLM) (maybe we will feel the essay not good and write again.)
+So in step 3: write the first draft of the essay (LLM)
+step 4: consider what parts need revision
+step 5: Revise your draft
+
+know what blocks is using  for what usage:
+--------------------------------------------|
+building block| examples |    use cases     |
+--------------------------------------------|
+models        |          |planning,         |
+              |  LLMs    |tools use,        |
+              |          |text gen,         |
+              |          |info extract      |
+              |-----------------------------|
+              | other AI |image analysis,   |
+              | models   | text to speech   |
+--------------------------------------------|
+Tools         |          |   web search,    |
+              |          |get real time data|
+              |   API    |   send emails    |
+              |          | check calenders  |
+              |-----------------------------|
+              |   info   |    Databases     |
+              | retrieval|       RAG        |
+--------------|-----------------------------|
