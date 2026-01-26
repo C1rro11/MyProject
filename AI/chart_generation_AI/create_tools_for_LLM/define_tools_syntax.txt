@@ -1,0 +1,46 @@
+import aisuite as ai
+
+Client = ai.Client()
+
+response = Client.chat.completions.create(
+    model = "openai:gpt-4o",
+    messages = messages,
+    tools = [get_current_time],
+    max_returns = 5  # the number of turns to let LLM to call the another tools.
+)
+
+def get_current_time(...)
+
+So, The LLM will use the tools : function for the purpose.
+
+Behind the Sence: how it works?
+
+
+first the tools will transfer to a JSON files.
+
+like
+
+tools = [{ "type" : "function",
+                "function" : {
+                    "name" : "get_current_time",
+                    "description" : "Returns the current time as a string."
+                    "parameters" : {}
+                }
+        }]
+
+
+if the tools contain parameters, it will return a more complex schema, looks like.
+
+tools = [{ "type" : "function",
+                "function" : {
+                    "name" : "get_current_time",
+                    "description" : "Returns the current time as a string."
+                    "parameters" : {
+                        "timezone" : {
+                            "type" : "string",
+                            "description" : "The IANA time zone string, e.g: 'American/New_York' or 'Pacific/Auckland'"
+                        }
+                    }
+                }
+        }]
+

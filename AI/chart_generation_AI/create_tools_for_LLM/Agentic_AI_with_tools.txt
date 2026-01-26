@@ -1,0 +1,35 @@
+What is tools?
+it is let LLM can be used for doing some action for you.
+
+eg: ask LLM what time is it now?
+without tools: LLM -> sorry i don't have to right to access the current time.
+
+
+
+now we define the function get_current_time():
+
+from datetime import datetime
+def get_current_time():
+    """return the current time as string"""
+
+    return datetime.now.strftime("%H:%M:%S")
+
+
+with get_current_time() Tools --> now the time is XX:XX:XX
+
+
+Also LLM can design to use the tools or not.
+
+eg: asking the menu of LLM , then LLM might dont use the tool.
+
+
+
+There are other example of LLM using tools:
+
+1: asking: can you help me to find a italian restaurant?
+
+LLM --> web_search(query="italian restaurant").
+
+2: show me the inventory of sunglasses.
+
+LLM --> query_database(tables="inventory", product="sunglasses").
