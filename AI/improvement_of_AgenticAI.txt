@@ -1,0 +1,15 @@
+Non-LLM components (web search, text retrieval for RAG, code execution, trained ML model, eg recognizing photo.)
+1: tune hyperparameters of components
+    - web search: number of results, date range.
+    - RAG: change similar threshold, chunk size.
+    - ML model: Detection threshold.
+
+2: replace components
+    -try different web search engine, RAG provider, etc.
+
+LLM components:
+
+1: improve prompt (add explicit instructions.)
+2: try new model / try multi-model / use eval to pick the best
+3: split up the step - decompose the task
+4: fine-tune model - fine tune internal data to improve performance

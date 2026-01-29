@@ -1,0 +1,45 @@
+if this time, you find out maybe 6 out of 20 example extracted from the invoice,
+LLM mixed up the due date and bill date. How to evals/evaluate the LLM accuracy?
+
+overall: build a system and look at the output, is there any unsatisfactory way.
+eg: incorrect output, not following limitation, etc.
+
+then, drive improvement by putting in place a small eval with 20 examples to help
+you tracking the process.
+
+finally, monitor as you change to workflow(eg, new prompts, new algorithms), to see
+if the metric improves.
+
+
+example: extracting due date from invoice bill.
+steps:
+1:manually extract the due date from 10-20 invoices.
+2:specify the output format of date in prompt
+3:extract date from LLM response using code.
+4: compare LLM result to ground truth. eg:(if due date === extract date, correct++)
+
+example: give an photo to LLM, and LLM create a post product selling within 10 words.
+problems: somethings generate above 10 words.
+
+improvement
+steps:
+1: create 10-20 examples
+2: add code to measure word count of the post (eg: word_count = len(text.split()))
+3: compare the word count with post.(eg: if(word_count <= 10, num_correct+1))
+
+
+example: research agent, writing essay to talk about the topic that user provided.
+
+problem: output are missing some gold stardard discussing point.
+
+improvement steps:
+1: create 3-5 gold- stardard talking point.
+2: use LLM as a judge to count how many gold-discussion point were mentioned.
+3: write a prompt that tell LLM to give json output with 2 keys: score and explaination(lists of talking point appear)
+4:get score in each prompt.
+
+
+
+There are 2 axes of evaulation. (also called end-to-end evals) 1 end: input-end and final output-end
+1: evals with code
+2: LLM as a judge.

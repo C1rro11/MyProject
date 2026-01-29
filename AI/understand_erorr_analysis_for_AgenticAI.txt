@@ -1,0 +1,28 @@
+forexample:  research agent:
+observed problem: missing key point something
+
+think about the workflow of the LLM will do.
+
+                user query --> LLM and use tool? --> web search tool --> LLM tools(pdf to text? web fetch?) --> web fetch --> LLM write essay.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+possible cause:              |bad research terms?| low quality result?  |        poor selection of result?    | 
+
+
+in order to understand what components affect, we can tracking the traces of the LLM.
+
+trace meaning : the result of the components.
+
+forexample: first steps of LLM output the searching results of the topics, then next step is the output of the overall url ,etc.
+see which part of the result getting wrong.
+
+then, create a spreadsheet to count up the error are (write down some word to describe).
+
+then, calculate the errors percentage for each components.
+eg: the reason making LLM output unstasifactory result because of
+    search item: 5%, search result:45%, picking 5 best resources: 5%, etc.
+
+End-to-end error analysis and improvement are expensive. So, instead of doing a 
+whole end-to-end eror analysis or improvement in a whole system. we can do
+components-levels error analysis or improvement.
+
+eg: analysis the search engine, pdf-to-text tools, etc.

@@ -1,0 +1,9 @@
+MCP model context protocol
+
+--> when 1 app want to access 4 apps(github, slack, GDrive, postgreQL)
+and m app also want to access the same apps.
+
+then the total amount of work done will be m*n.
+and 
+MCP provide standard for applicaiton  to get access data and tools, so the total amount just m+n.
+ 

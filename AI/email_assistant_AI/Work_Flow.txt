@@ -1,0 +1,18 @@
+Prompt to LLM --> LLM --> choose tools from toolbox --> use tools --> return output.
+
+in this case, i want it help me to find a free slot and make that free slot a appointment.
+
+
+1: prompt to LLM : Help me to find a free slot on thursday in my calender then make an appointment with alice.
+
+2: LLM take the prompt and open the toolbox.  {make_appointment, check_calendar, delete_appointment}.
+
+3: take out check_calendar
+
+4: return the output : (free slot of thursday)
+
+5: LLM call toolbox again, then use make_appointment in this time.
+
+6: return the output : make appointment success/fail.
+
+7: overall output to user.

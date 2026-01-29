@@ -1,0 +1,19 @@
+in planning workflow, you need to descript the use of the tool to AI.
+
+eg: user quey: Do you have any round glasses in stock that under $100?
+
+prompt: You have access to the following
+        tools:
+        {description of tools} Return a step-by-step plan to carry
+        out the user's request.
+
+
+(prompt,user query)
+
+
+or you can tell system to give you the process in json format.
+
+prompt :You have access to the following tools:
+        {description of tools}
+        Create a step-by-step plan in JSON format.
+        Each step should have the following items: step number, description, tool name, and
