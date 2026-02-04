@@ -43,3 +43,11 @@ improvement steps:
 There are 2 axes of evaulation. (also called end-to-end evals) 1 end: input-end and final output-end
 1: evals with code
 2: LLM as a judge.
+
+
+tips for end-to-end eval.
+-quick and dirty to start. (just gen 10-20 testing, let human or llm can comment first.)
+-as we find place that our evals fail to capture human judgement as to what system are better,
+use that as an opportunity to improve the metric.(collect a bigger eval set.)
+
+

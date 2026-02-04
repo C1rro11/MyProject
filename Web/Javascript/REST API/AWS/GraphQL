@@ -1,0 +1,45 @@
+what is graphql?
+-query language for APIs and runtime for executing queries.
+-allows clients to request what they need.
+-provide flexible and efficient REST in different senario.
+-not predefined endpoint(REST), but provide single endpoint where clients specify their data requirement.
+
+GraphQL and REST characterstics.
+SAME:
+-Client-Server Model  --Both use a client-server architecture for data exchange.
+-Statelessness --  Neither maintains client session information between requests.
+-HTTP-Based -- Both typically use HTTP as the underlying communication protocol.
+-Resource-Oriented Design --  Both design their data interchange around resources, which refer to any data or object that the client can access and manipulate through the API.
+-Data Format Flexibility -- JSON / XML / HTML suppported.
+-Language and Database Agnostic -- Both can work with any programming language or database structure, making them highly interoperable.
+-Caching: Both support caching, allowing clients and servers to store frequently accessed data for improved performance.
+
+GraphQL vs REST.
+1: REST: Request Structure and Data Fetching
+    REST uses different HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources.
+
+    GraphQL: single endpoint for all operation, relies on quires for fetching data and mutation for modifying data. client can fetch the data that the client exactly they need in a single request
+
+
+2: Server-side Schema --
+    REST doesn't require a server-side schema, though one can be optionally defined for efficient API design and documentation.
+
+    GraphQL uses a strongly-typed server-side schema to define data and data services. written in GraphQL Schema Definition Language (SDL), includes object types and fields for each object and server-side resolver functions that define operations for each field.
+
+
+3: Versioning
+    REST often includes versioning in the URL, which can lead to maintaining multiple API versions simultaneously. Versioning is not mandatory but can help prevent breaking changes.
+
+    GraphQL promotes a continuous evolution of the API without explicit versioning by requiring backward compatibility. Deleted fields return error messages, while deprecation tags phase out old fields and return warning messages. 
+
+4: Error Handling
+    Error Handling
+    REST is weakly typed, requiring error handling to be built into the surrounding code. This may not automatically identify type-related errors (e.g., parsing a number as text).
+
+    By contrast, GraphQL is strongly typed and requires a comprehensive schema definition. This allows your service to automatically identify many request errors with a high level of detail.
+
+How to create GraphQL?
+-GraphQL schema -- defines the types and fields that you can request when an operation is executed.
+-Data sources -- This can be a DynamoDB table, Lambda function, etc.
+-Resolvers 
+

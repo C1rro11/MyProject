@@ -1,0 +1,19 @@
+AppSync provide:
+-access data from one or more data sources from single graphql API endpoint.
+-Combine mutiple resources Graphql API into single/ merged graphql API.
+-publish real time data update
+-built-in secure, monitoring, logging, tracing, with optional cache with low latency.
+- only pay for API request and real time msg transfer.
+
+AppSync Events: 
+-create secure and performant serverless WebSocket APIs
+-no API code required to get starte
+-can create production-ready real-time web and mobile experiences in minutes.
+- the management and scaling of real-time applications by shifting tasks --> message transformation, broadcast, publish, subscribe authentication and logs, low latency.
+
+With Event APIs, enable the following network communication types.
+-Unicast
+-Multicast
+-Broadcast
+-Batch publishing and messaging
+

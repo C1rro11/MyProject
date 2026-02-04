@@ -16,7 +16,8 @@ The dataset includes fields such as date, coffee_type, quantity, and revenue, an
 '''
 
 def generate_chart_code(instructions:str, models: str, out_path_v1: str) -> str:
-    prompt = f"""
+    #prompt is to tell AI instruction and what should follow, then pass it to LLM
+    prompt = f"""            
     You are a data visualization expert.
 
     Return your answer *strictly* in this format:
@@ -51,6 +52,7 @@ def generate_chart_code(instructions:str, models: str, out_path_v1: str) -> str:
 
     Return ONLY the code wrapped in <execute_python> tags.
     """
+    
     response = utils.get_response(model, prompt)
     return response.strip()
 

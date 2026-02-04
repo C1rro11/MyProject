@@ -34,7 +34,7 @@ So in step 3: write the first draft of the essay (LLM)
 step 4: consider what parts need revision
 step 5: Revise your draft
 
-know what blocks is using  for what usage:
+know what blocks is using for what usage:
 --------------------------------------------|
 building block| examples |    use cases     |
 --------------------------------------------|

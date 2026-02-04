@@ -1,0 +1,37 @@
+REST API - representational State Transfer - is a software architecture that impose
+condition of API should work.
+
+      REST was initially created to manage communication on complex network.
+
+      Uniform interface - a fundamental design of RESTful webservices
+      imposes four architectural constraints:
+      - Requests should identify resources.
+      - by sending metadata, Clients have enough information in the resource representation to modify or delete the resource
+      - by sending self-descriptive messages that contain metadata, Clients receive information about how to process the representation further.
+      -  by sending hyperlinks in the representation, Clients receive information about all other related resources they need to complete a task.
+
+      -Statelessness - server does not store any client contenxt
+        o benefit: less memory usage.
+        
+      -Layered system - be the middleman between client and server, provide sercurity or speed up the request.
+        o benefit: more secure and faster.
+
+      -cacheability - store response in the cache, so next time the client can get the response, no need to request the server again.
+        o benefit: faster.
+ 
+RESTful API - an interface that two computer systems use to exchange information securely over the internet.
+
+      the basic function of RESTful API is same as browsing the web.
+
+      the client contact the server by using the API when it requires resources.
+
+      These are the general steps for any REST API call:
+      - client follows the API documentation to format to send request to server.
+      - server authenticates the client and confirm the client has permission to make request.
+      - server receives the request and processes it internally.
+      - server return response to client, info contain:  
+          1: wheather the request was successful?
+          2: info that client requested.
+          
+
+

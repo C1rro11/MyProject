@@ -1,0 +1,12 @@
+
+communication pattern:
+1 lead Agent(eg group up all others idea into 1)
+3 sub agent, to pass its own task to the lead agent.
+
+Deeper hierarachy pattern:
+same as communication pattern, but what more is the sub agent also can call it child agent.
+
+eg: the researcher agent can call web researcher engine and fact checker engine.
+
+All-to-all:
+all AI agent can call each other.
