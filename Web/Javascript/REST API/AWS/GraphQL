@@ -4,6 +4,25 @@ what is graphql?
 -provide flexible and efficient REST in different senario.
 -not predefined endpoint(REST), but provide single endpoint where clients specify their data requirement.
 
+Create API by console option:
+-Designing a customized GraphQL API by generating it through a predefined model and setting up a new DynamoDB table (data source) to support it.
+
+-Designing a GraphQL API with a blank schema and no data sources or resolvers.
+
+-Using a DynamoDB table to import data and generate your schema's types and fields.
+
+-Using AWS AppSync's WebSocket capabilities and Pub/Sub architecture to develop real-time APIs.
+
+-Using existing GraphQL APIs (source APIs) to link to a Merged API.
+
+
+AWS AppSync also supports several non-console options to create GraphQL APIs:
+-AWS Amplify
+-AWS SAM
+-CloudFormation
+-The CDK
+
+
 GraphQL and REST characterstics.
 SAME:
 -Client-Server Model  --Both use a client-server architecture for data exchange.
@@ -39,7 +58,11 @@ GraphQL vs REST.
     By contrast, GraphQL is strongly typed and requires a comprehensive schema definition. This allows your service to automatically identify many request errors with a high level of detail.
 
 How to create GraphQL?
--GraphQL schema -- defines the types and fields that you can request when an operation is executed.
--Data sources -- This can be a DynamoDB table, Lambda function, etc.
--Resolvers 
+1: GraphQL schema -- GraphQL schema is the blueprint of the API, It defines the types and fields that you can request when an operation is executed, To populate the schema with data, you must connect data sources to the GraphQL API. 
+
+2: Data sources -- These are the resources that contain the data for populating your GraphQL API. AWS AppSync supports a multitude of data sources to build robust and scalable GraphQL APIs. Data sources are linked to fields in the schema. Whenever a request is performed on a field, the data from the source populates the field. This mechanism is controlled by the resolver.
+
+This can be a DynamoDB table, Lambda function, etc.
+
+3: Resolvers -- responsible for linking the schema field to the data source. They retrieve the data from the source, then return the result based on what was defined by the field. AWS AppSync supports both JavaScript and VTL for writing resolvers for your GraphQL APIs.
 
