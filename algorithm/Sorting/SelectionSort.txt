@@ -1,0 +1,17 @@
+Input: An array 𝐴[1 … 𝑛] of elements
+Output: Array 𝐴[1 … 𝑛] of elements in sorted order (ascending)
+
+method: 
+In pass i, find smallest item in 𝐴[𝑖 … 𝑛] and swap it with 𝐴[𝑖]
+Implementation:
+
+
+intput(A array)   
+for(int i = 0; i < n-1; ++i){
+    for(int j = i+1; j < n-1; ++j){
+        if(A[i] > A[j])    
+        -->swap(A[i],A[j]);
+    }
+}
+
+O(A) = n^2

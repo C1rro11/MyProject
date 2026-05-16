@@ -1,0 +1,21 @@
+main idea: 
+solving the problem input a sorted array size n, 
+and divide it into one or more subproblem.
+
+implementation:
+
+set q = middle of the array , if x = A[q], return q.
+
+BinarySearch(A,p,r,x); #搵x
+
+if p > r return; # if LHS>RHS return;
+q = [(p+r)/2]   #頭尾相加/2 = middle
+if A[q] = x return q #中就return pos
+if x < A[q]
+    BinarySearch(A,p,q-1,x);
+else
+    BinarySearch(A,右邊q+1,r,X);
+
+
+
+

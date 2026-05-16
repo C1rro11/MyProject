@@ -1,0 +1,15 @@
+what is the formal definition of Big-O?
+- When we are talking T(n) = O(g(n))
+--> g(n) is the upper bound of function T(n).
+--> meaning that there exist c(scalar), n_0(a particular point), such that 
+for all n when greater than n_0, 0 <= T(n) <= c*(g(n))
+
+
+what is the formal definition of Big-omega?
+- When we are talking T(n) = Ω(g(n))
+--> g(n) is the lower bound of function T(n)
+--> meaning that there exist c(scalar), n_0(a particular point), such that
+for all n when greater than  n_0, 0 <= c*(g(n)) <= T(n)
+
+what is the formal definition of Big-θ?
+--> between big-omega and big-O
