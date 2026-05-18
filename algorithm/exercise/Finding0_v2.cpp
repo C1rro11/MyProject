@@ -23,13 +23,15 @@ int main(){
     int D[] = {0,1,1,1,1,1};
     int E[] = {0,0,1,1};
     int k = 0;
-    int n = sizeof(C)/sizeof(C[0]);
+    int n = sizeof(B)/sizeof(B[0]);
     int i = 1;
     int hi =0;
-    while(i < n && C[i] == 0){
+    int steps = 0;
+    while(i < n && B[i] == 0){
         i = i * 2;
+        std::cout << "Steps " << ++steps << " : i = " << i << std::endl;
     }
-    k = find_0(C, i/2, hi = (i < n) ? i : n -1);
+    k = find_0(B, i/2, hi = (i < n) ? i : n -1);
     std::cout << "The position of 0 is: " << k << std::endl;
     return 0;
 }
