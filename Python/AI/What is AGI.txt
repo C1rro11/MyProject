@@ -1,0 +1,10 @@
+Artificial general intelligence(AGI) is a hypothetical type of AI that can learn,
+understand, apply cognitive skills across any intelligence task at human level.
+
+narrow AI(today) vs AGI.
+Today’s AI (Narrow): Excels at highly specific tasks (e.g., generating text, playing chess, or identifying diseases) 
+but cannot easily transfer that knowledge to unrelated problems.
+
+It requires training for every new use case.AGI (General): Would act like a human brain. 
+It could seamlessly connect concepts across different disciplines, learn new skills from scratch, 
+and apply common sense to solve unfamiliar problems.

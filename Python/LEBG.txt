@@ -1,0 +1,19 @@
+LEBG rules in python.
+
+In python, the interpreter has its own lookup sequence,
+it also called the LEBG rules.
+
+Step	Scope	    What it means
+1. L	Local	    Variables defined inside the current function or block of code.
+2. E	Enclosing	Variables in any outer functions (if a function is nested inside another function).
+3. G	Global	    Variables defined at the top level of your script/module.
+4. B	Built-in	Python's core toolkit that is always available (like print(), len(), or str).
+
+
+exec() --> run python code. run as normal if there is no sandbox.
+
+eg: no sandbox:
+    exec(code)
+
+    have sandbox:
+    exec(code, sandbox1, sandbox2);

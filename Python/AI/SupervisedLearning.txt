@@ -1,0 +1,23 @@
+What is Supervised learning?
+
+-Learning from the "answer"(label) that I provided.
+
+From input(X) to output(Y).
+
+for example: I provide many data of input(X) that the housing size. and the output is the price of the house.
+Then, using supervised learning can learn from my data set and give a rough guess of a new input enter.
+
+There are many example are using supervised learning:
+
+input(X)   To           output(Y)
+
+email                   spam?(0/1)
+audio                   text transcript
+English                 Spanish
+ad, user info           click?(0/1)
+image, radar info       position of car
+
+
+Algorithm using for supervised learning:
+- regression (predicts numbers, infinitely many possible outputs.)
+- classification (only for categories / class)

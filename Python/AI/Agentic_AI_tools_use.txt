@@ -1,0 +1,33 @@
+we can define a tools to let the LLM use.
+
+tools = [
+    Tool1,
+    Tool2,
+    Tool3,
+    ...
+]
+system_prompt_ = f"""
+    you are a smart agent which can help me searching in web, correct my grammar and ....
+
+    here are the tools that you can use if needed:
+    Tool1 : <descriptions>
+    Tool2 : <descriptions>
+    Tool3 : <descriptions>
+
+    here is the time now if you needed: datetime.now().strftime("%d:%H:%M:%S").
+"""
+
+chat = Client.chat.completions.create(
+    model = model,
+    message = [
+        {"role" : "system", "content": system_prompt_}
+    ],
+    tools = tools,
+    tool_choice = "auto",
+).choice[0].strip()
+
+
+in another page:
+def Tool1 (...){...};
+def Tool2 (...){...};
+def Tool3 (...){...};

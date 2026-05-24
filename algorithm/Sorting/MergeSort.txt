@@ -1,0 +1,17 @@
+MergeSort
+purpose: create 2 sorted lists into a sorted whole list.
+
+implementation:
+create 2 new arrays L and R.
+L:[p...q] R:[q+1...r]
+
+append inf at the end of L and R.
+int i ,j = 1;
+
+for k = p to r.
+    if(L[i] <= R[j])
+        A[k] = L[i];
+        i = i + 1;
+    else
+        A[k] = R[i];
+        j = j + 1;

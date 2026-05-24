@@ -1,0 +1,36 @@
+It is opposite of supervised learning. Without labeled.
+
+Which is not similar with supervised learning, it is not clustering in categories at first, but unknown while input.
+aim : finding the structure between inputs.
+
+example 1: Google news 
+
+Giant panda gives birth to rare twin cubs at Japan's oldest zoo
+USA TODAY • 6 hours ago
+• Giant panda gives birth to twin cubs at Japan's oldest 20
+CBS News • 7 hours ago
+• Giant panda gives birth to twin cubs at Tokyo's Ueno Zoo
+WHBL News • 16 hours ago
+• A Joyful Surprise at Japan's Oldest Zoo:The Birth of Twin
+Pandas
+The New York Times • 1 hour ago
+• Twin Panda Cubs Born at Tokyo's Ueno Zoo
+PEOPLE • 6 hours ago
+View Full Coverage.
+
+
+There are similar word like : panda, zoo, twin.
+
+and the algorithm depends on the similar word and put those news to relates news.
+
+example 2:  DNA microarray
+
+there are an array, its columes are presenting an individual, and the rows are representing the genes(DNA types).
+by using the unsupervised learning, it can cluster a similar type of people into a group of people that maybe like
+a vegetarian.
+
+
+algorithm:
+1: clustering : group sim ilar data into groups.
+2: Anomaly detection : finding unusual data points.
+3: dimensionality reduction : from big dataset to fewer numbers (compress).

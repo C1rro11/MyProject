@@ -13,3 +13,4 @@ for all n when greater than  n_0, 0 <= c*(g(n)) <= T(n)
 
 what is the formal definition of Big-θ?
 --> between big-omega and big-O
+-->  c*(g(n)) <= T(n) <= c'*(g(n))
