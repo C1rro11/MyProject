@@ -1,0 +1,92 @@
+GradientDescent is to know the faster steps to go to downhill(lowest cost of w and b).
+
+Also gradient Descent called as "Batch" gradient Descent, since it will train the data batchly.
+
+batch means: each step of gradient descent uses all the training data.
+
+formula:
+
+for w = w - å* dJ/dw(w,b)  (in this time, = is the assignment operator but not math equal)
+for b = b - å* dJ/db(w,b) 
+
+explaination:
+w in the left handside is the old value w.
+å is the learning rate, bigger å means the old value need a big change (bigger steps) to downhill, 
+also means the derirative of J(w,b) changing the function aggresively.
+
+dJ/dw(w,b) which is instantaneous rate calculus, in here which mean the slope change how fast.
+
+Correct way in programming. (instantaneous update.)
+
+tmp_w =  w - å* dJ(w,b)/dw
+tmp_b = b - å* dJ(w,b)/db
+w = tmp_w
+b = tmp_b 
+
+But dont do like:
+tmp_w =  w - å* dJ(w,b)/dw
+w = tmp_w (it will change the value of w, value will affect next line)
+tmp_b = b - å* dJ(w,b)/db
+b = tmp_b 
+
+
+What behind the scene? why the formula look like this? how it works?
+
+now, we just look at the formula  J(w), s.t., w = w - å* dJ(w)/dw.
+
+and in graph, w is looks like a parabola. upward (peak is the lowest point)
+
+case 1: dJ(w)/dw (slope) is greater than 0, w - å* dJ(w)/dw(>0), in graph it means go left.
+case 2: dJ(w)/dw (slope) is smaller than 0, w - å* dJ(w)/dw(<0), in graph it means go right.
+
+dJ(w,b)/dw = 1/m*∑(f_w,b(x^(i)-y(i)))*x^(i)
+dJ(w,b)/db = 1/m*∑(f_w,b(x^(i)-y(i)))
+
+how to define a better gradient descent model?
+an "average"(circular) shape is better than other shape of gradient descent.
+
+for choosing a better scaling, we will do feature scaling first.
+Reason:
+1: it is better for the data fiting the sigmoid graph and tanh graph.
+2: in absolute value descaling can make the cost function cost less,
+because although the scaling the value also cause the same ratio. But 
+it will adjust the nature of derirative of cost function, w = w - â * slope * x(i).
+in this situation, if the number of x(i) still non-normalization, w will become hard
+to control.
+
+feature scaling have 2 version
+1: x/max(x) : 
+it can make the x value become ratio, but if the value all near max become
+same as problems, eg: [2020, 2024, 2026], using x/max(x), will become [0.997, 0.999, 1.000]
+.
+
+2: (x-min)/ max(x) - min(x) : 
+such that in update version (x-min)/(max-min):  eg: [2020, 2024, 2026], using x/max(x), will become [0.997, 0.999, 1.000]
+become [0, 4, 6], ratio will become: [0, 0.66, 1].
+why it can do like - min ? it is using translation. (in geomatric).
+
+mean normalization:
+feature: make all the value translation to 0-1 and make it average, then the
+gradient descent will more "average".
+
+Z-score normalizaiton:
+(x- mean) / sd.
+
+for helping the model observe the "outlier" easyily. like if the Z-score value are
+between -3 to 3. and if out of the range, like  +526. then we can know there is a error data
+in it.
+
+when should we stop?
+- we can do the epsilon test:
+- we set the epsilon like = 0.001, if cost function(J(w,b)) < 0.001 in 1 iteration,
+then it is convergence.(local minimum point)
+
+why we dont find global minimum(there are advanced function to find global min)
+- because the global minimum is very sharp, sensitive, when you goes with new data,
+there may are some huge/ skyrocket changes in the graph.
+- for local min, the shifts are not sensitive than the global one, it just accept
+"general" infomation.
+
+generalization gap : It measures a model's ability to take what it learned during training 
+and apply it to completely new, unseen data.
+

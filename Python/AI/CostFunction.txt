@@ -1,0 +1,33 @@
+Cost Function: also called the squared error cost function
+
+J(w,b) = 1/2m * ∑(from i to m)* (y hat - y)^2     
+
+=J(w,b) = 1/2m* ∑(from i to m)* (f(w,b) - y)^2
+
+explaination:
+
+1.(y hat - y)  = estimate of y - actual y = different actual value
+2. ∑ from i to m is to estimate the whole picture between estimation and actual value.
+3.  divide by m is take the average. and divide by 1/2 is what computer science do and result is good to do that.
+
+target: we need to make J(w,b) smaller as you can.
+
+
+we can see the relationship between f_w(x) and J(w);
+
+for the graph in f(w) :                 #data set [1,2,3];
+we choose w = 1 first,
+through the J(w) function : J(w) = 1/2m * ∑(from i to m)* (wx - y)^2
+J(w) = 0;
+
+then we try w = .5,
+through the J(w) function : J(w) = 1/2m * ∑(from i to m)* (wx - y)^2
+J(w) = 0.58;
+
+then we try w = 0
+J(w) = 2.3;
+
+after we plot all the point in a graph of J(w);
+we can see there is a parabola.
+and the lowest point is what we are looking at.
+

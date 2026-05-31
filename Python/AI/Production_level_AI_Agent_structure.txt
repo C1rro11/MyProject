@@ -1,0 +1,43 @@
+For building a production-grade AI agent, we will need this setting.
+
+
+We use claude for example.
+Layer 1: (The memory layer) claude.md/
+--The memory layer is the foundation. Claude will read claude.md file to know our setting.
+--Set the rules. Loads automatically, and Never re-explain.
+
+architecture.rules: Naming, structure, and repo expectations 
+1: global.md :  living in ~/.claude/ -- applies to every project.
+2: project.md : living in .claude/ -- this repo only.
+
+Layer 2:(The knowledge layer) skills/
+-- The knowledge layer is reuseable expertise that fires automatically when the task matches.
+-- SKILL.md : Desciptions matched, then auto invoked.
+-- scripts/ : Reference scripts and templates.
+-- content.md : On demand, isolate subagent.
+ Skills don't prompt. They activate.
+
+Layer 3:(The Guardrial layer) Hooks/
+-- The guardrial layer is not optional, it Deterministic scripts that run before and after every tool use, it is not AI, not optional.
+-- PreToolUse.sh : prevend rm -rf, validate before run.
+-- PostToolUse.sh : Auto lint On Write, ping Slack.
+-- SessionStart.sh : Deterministic (指無隨機數加入，input 不變) Not AI. Git hooks.
+Hooks is the safety net, claude cannot skip it.
+
+Layer 4: (The delegation layer) Subagents/
+This layer is the main orchestrates. Subagents execute. Context stays clean.
+-- the delegation layer specialized agent with their own context window, tools, and permission.
+-- code-reviewer.md : own context window, result only.
+-- test-runner.md : custom tools, custom permission.
+-- explorer.md : keeps the main context clean
+
+Layer 5:(The distribution layer ) Plugins/
+This layer package the entire stack and ship it to your team in one install.
+-- manifest.json : bundles skills, agent, hook and commands.
+-- marketplace.url : npm packages for agent capabilities.
+-- team.install : one install, very teammate aligned.
+
+Build once. Deploy everywhere. No manual setup for anyone.
+
+
+ 

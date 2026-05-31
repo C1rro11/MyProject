@@ -21,3 +21,32 @@ image, radar info       position of car
 Algorithm using for supervised learning:
 - regression (predicts numbers, infinitely many possible outputs.)
 - classification (only for categories / class)
+
+Terminology:
+
+notation :lowercase x = "input" variable / feature / input feature
+          lowercase y = "output" variable / target variable
+          lowercase m = total number of training example.
+          (x,y) = a single example.
+          (x^(i), y^(i)) = the ith training example. (a particular single example) 
+          x^(i) != x^i
+
+for multiple features:          
+          n = number of input features
+          vector x^(i) = the ith training example from 1...n features
+          x_j = the jth feature.
+          x_j^(i) = the ith training example of jth feature.
+
+Workflow:
+1: feed the training feature and target variable into the learning algorithm.
+2: the supervised learning algorithm will produce some functions f. 
+3: the target of function f is to put a input x and produce y hat(estimate/ prediction for y.)
+
+To design a learning algorithm:(think)
+1: how to represent a function f? / what is the net formula are we going to use to compute f. 
+
+f_w,b(x) = wx + b.  (w,b are numbers, and those will affect the prediction of y.)
+
+for Multiple feature (multiple linear regression):
+f_w,b(x) = w1x1 + w2x2 + w3x3 + ....+ wnxn + b
+         = vector(w) . vector(x) + b

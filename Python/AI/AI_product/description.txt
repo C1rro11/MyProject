@@ -1,0 +1,33 @@
+os.environ.get():
+1: prevents crash
+2: fallback defaults
+
+eg: 
+# assume system have port set to "8080"
+port = os.environ.get('PORT')
+print(port) #output: 8080
+
+# Assuming 'DB_PASSWORD' is not set
+password = os.environ.get('DB_PASSWORD')
+print(password)  # Output: None (No crash!)
+
+#setting default value
+debug_mode = os.environ.get('DEBUG_MODE', 'False')
+print(debug_mode)  # Output: "False" (if DEBUG_MODE wasn't found)
+
+Path('~/.kaggle/kaggle.json')
+1: to create a path object
+
+Path('~/.kaggle/kaggle.json').expanduser()
+1:it will change the path directory automatically.
+2: realize who loggin.
+
+eg : (/Users/your_username/).kaggle/kaggle.json
+
+
+.parent
+:pointing foldler
+
+eg:
+cred_path('~/.kaggle/kaggle.json').expanduser()
+cred_path.parent # ~/.kaggle
