@@ -1,0 +1,12 @@
+feature engineering is using the intuition feature to create a new feature.
+
+eg: housing, x1 = frontage , x2 = depth.
+
+new feature x3 = x1*x2
+x3 = area.
+
+and sometimes, there may some feature can't represent the whole function.
+
+such that we will do like upgrade the dimention,
+eg: f_w,b = x1 + b.
+to : f_w,b = x1 + x1**2 + x1**3 + .... + b
