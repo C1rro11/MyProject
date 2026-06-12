@@ -1,0 +1,32 @@
+also called sigmoid function.
+
+terms:
+0 : absence / benign
+1: presence / malignant
+
+why logistic function?
+- because for classification also is a binary options.
+-it is only 0(false) / 1(true).
+-a sigmoid function is more fitting for the output.
+
+what a logistic function looks like?
+- g(z) = 1/ 1+e^(-z)
+- z = f_wb , f_wb = w*x +b
+thats why g(z) is looks like  1/ 1+e^-(w*x+b).
+
+why choose e be the main function?
+- in normal form, 1/ 1+e^(-z) can produce a fitting in 0/1,
+but another function also can fit 0/1 why e?
+- because the derivative of e^x is it self, so after
+gradient descent, it is easy to handle.
+
+how the function to sepearate 0/1?
+- the function are findg the dicision boundary, which is 
+how to seperate 0 and 1.
+- you can either set a threshold like if >= 0.5 count as 1,
+<0.5 count as 0. (y-axis)
+- also can think about in x-axis, but how? in y-axis perspective,
+it is z also is a f_wb, and f_wb = w*x+b, so a decision boundary
+also is a f_wb. how a decision boundary looks like is depends on
+how your f_wb function looks like.
+

@@ -1,17 +1,17 @@
 MergeSort
-purpose: create 2 sorted lists into a sorted whole list.
+purpose: 
+1: divide a whole array into half
+2: sort each half recursively.
+3: make 2 half merge tgt.
 
 implementation:
-create 2 new arrays L and R.
-L:[p...q] R:[q+1...r]
 
-append inf at the end of L and R.
-int i ,j = 1;
+MergeSort(A,p,r):
+    if p = r then return
+    q = [(p+r)/2]
+    MergeSort(A,p,q)
+    MergeSort(A,q+1,r)
+    Merge(A,p,q,r)
 
-for k = p to r.
-    if(L[i] <= R[j])
-        A[k] = L[i];
-        i = i + 1;
-    else
-        A[k] = R[i];
-        j = j + 1;
+
+first call MergeSort(A,1,n)
